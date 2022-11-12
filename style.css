@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root {
+    --primary-cyan: hsl(158, 36%, 37%);
+    --primary-cream: hsl(30, 38%, 92%);
+    --neutral-dk-blue: hsl(212, 21%, 14%);
+    --neutral-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+
+body {
+    font-size: 0.875rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-cream);
+    color: var(--neutral-grayish-blue);
+    font-weight: 500;
+
+    max-width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+}
+
+.product-preview {
+    background-color: var(--white);
+    max-width: 24rem;
+    width: 100%;
+    border-radius: 23px;
+    overflow: hidden;
+}
+
+.product-preview .img {
+    background-image: url("images/image-product-mobile.jpg");
+    background-position: top center;
+    background-size: cover;
+    min-height: 17rem;
+}
+
+.product-preview .content {
+    padding: 2rem;
+}
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--neutral-dk-blue);
+    font-size: 2rem;
+    margin-block: 1rem;
+    line-height: 1.1;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.price .sale {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: var(--primary-cyan);
+}
+
+.price .old {
+    text-decoration: line-through;
+}
+
+button {
+    background-color: var(--primary-cyan);
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #1A4031;
+    cursor: pointer;
+}
+
+@media (min-width: 40rem) {
+    .product-preview {
+        max-width: 37.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .product-preview .img {
+        max-width: 18.75rem;
+        background-image: url("images/image-product-desktop.jpg");
+    }
+}
